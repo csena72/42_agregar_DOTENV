@@ -67,10 +67,17 @@ const loggerError = logger.getLogger('error');
 //nginx -s reload
 //nginx -s quit
 
-const PORT = process.argv[2] ?? process.env.PORT;
-const SERVER_MODE = process.argv[3] ?? "fork";
-const FACEBOOK_APP_ID = process.argv[4] ?? process.env.FACEBOOK_APP_ID;
-const FACEBOOK_APP_SECRET = process.argv[5] ?? process.env.FACEBOOK_APP_SECRET;
+const args = require('yargs').argv;
+
+/**
+* Ej.:
+* npm run start [--port=9000 --server-mode=cluster --fb-app-id=xxxxxx  --fb-app-secret=xxxxxxxx ]
+*/
+
+const PORT = args.port ?? process.env.PORT;
+const SERVER_MODE = args.server-mode ?? "fork";
+const FACEBOOK_APP_ID = args.fb-app-id ?? process.env.FACEBOOK_APP_ID;
+const FACEBOOK_APP_SECRET = args.fb-app-secret ?? process.env.FACEBOOK_APP_SECRET;
 
 const cluster = require("cluster");
 const numCpus = require("os").cpus().length;
