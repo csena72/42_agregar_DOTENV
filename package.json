@@ -4,9 +4,9 @@
   "description": "Consigna: Agregar DOTENV",
   "main": "index.js",
   "scripts": {
-    "start": "set NODE_ENV=development && node src/server.js",
-    "start:dev": "set NODE_ENV=development && nodemon src/server.js",
-    "start:prod": "set NODE_ENV=production && forever start src/server.js",
+    "start": "node src/server.js",
+    "start:dev": "nodemon src/server.js",
+    "start:prod": "forever start src/server.js",
     "test": "jest"
   },
   "repository": {

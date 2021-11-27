@@ -5,5 +5,5 @@ const MONGO_URI = NODE_ENV === 'development' ? process.env.MONGO_URI_DEV : proce
 
 module.exports = {
     PORT: process.env.PORT,
-    MONGO_URI: mongo_uri || '',
+    MONGO_URI: MONGO_URI || '',
 }

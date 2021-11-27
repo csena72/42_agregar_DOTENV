@@ -75,9 +75,9 @@ const args = require('yargs').argv;
 */
 
 const PORT = args.port ?? process.env.PORT;
-const SERVER_MODE = args.server-mode ?? "fork";
-const FACEBOOK_APP_ID = args.fb-app-id ?? process.env.FACEBOOK_APP_ID;
-const FACEBOOK_APP_SECRET = args.fb-app-secret ?? process.env.FACEBOOK_APP_SECRET;
+const SERVER_MODE = args.server ?? "fork";
+const FACEBOOK_APP_ID = args.fb_app_id ?? process.env.FACEBOOK_APP_ID;
+const FACEBOOK_APP_SECRET = args.fb_app_secret ?? process.env.FACEBOOK_APP_SECRET;
 
 const cluster = require("cluster");
 const numCpus = require("os").cpus().length;
